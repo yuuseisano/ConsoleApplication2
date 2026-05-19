@@ -4,7 +4,7 @@
 int* foo()
 {
 	int a = 10;
-	return &a;
+	return new int(10);
 }
 
 void foo2(int *p)
