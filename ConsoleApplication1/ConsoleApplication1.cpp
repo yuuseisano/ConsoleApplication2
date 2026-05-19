@@ -1,32 +1,17 @@
 ﻿
 #include <iostream>
 
-int* foo()
+void foo(std::unique_ptr<int> p)
 {
-	int a = 10;
-	return new int(10);
+	std::cout << *p << std::endl;
 }
-
-void foo2(int *p)
-{
-	int b = 10;
-	std::cout << &b << std::endl;
-	std::cout << b << std::endl;
-
-	*p = 20;
-	std::cout << b << std::endl;
-
-}
-
 
 int main()
 {
-	int* p = foo();
-	foo2(p);
+	std::unique_ptr<int> unique(std::make_unique<int>(10));
+	std::unique_ptr<int>unique2 ;
+	unique2.swap(unique);
 
-	std::cout << p << std::endl;
-	std::cout << &p << std::endl;
-
-	delete p;
+	std::cout << *unique2 << std::endl;
 }
 
