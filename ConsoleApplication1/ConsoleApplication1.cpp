@@ -8,7 +8,7 @@ void foo(std::unique_ptr<int> p)
 
 int main()
 {
-	std::unique_ptr<int> unique(std::make_unique<int>(10));
+	std::unique_ptr<int> unique(new int(10));
 	std::unique_ptr<int>unique2 ;
 	unique2.swap(unique);
 
