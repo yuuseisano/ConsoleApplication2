@@ -27,5 +27,6 @@ int main()
 	std::cout << p << std::endl;
 	std::cout << &p << std::endl;
 
+	delete p;
 }
 
